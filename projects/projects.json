@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Hotel Management System",
+    "desc": "A hotel management project is a comprehensive initiative in the hospitality industry that focuses on creating and implementing an efficient system to oversee all aspects of hotel operations..",
+    "image": "277",
+    "category": "android",
+    "links": {
+      "view": "#",
+      "code": "https://github.com/JenisDusara/hotel-management"
+    }
+  },
+  {
+    "name": "Student Management System",
+    "desc": "A Student data management project focuses on developing a system to collect, store, and manage student data efficiently in educational institutions.",
+    "image": "25",
+    "category": "android",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Airlines Analytics",
+    "desc": "The Airlines Data Analysis project involves extracting insights and valuable information from airline-related datasets using SQL and Python.",
+    "image": "26",
+    "category": "android",
+    "links": {
+      "view": "#",
+      "code": "https://github.com/JenisDusara/Airline-project"
+    }
+  },
+  {
+    "name": "Tomato leaf diseases",
+    "desc": "This project tackles tomato leaf diseases! We're building a tool to identify problems early. By taking a picture, the system analyzes the leaf for signs of disease.",
+    "image": "tomato",
+    "category": "android",
+    "links": {
+      "view": "#",
+      "code": "https://github.com/JenisDusara/TOMATO---LEAF-DISEASE"
+    }
+  },
+  {
+    "name": "Chatbot",
+    "desc": "Chatbot project: create a program for chatting like a virtual assistant. It can answer questions, complete tasks, or guide users.  Think of it as a conversational website or app!",
+    "image": "chatbot",
+    "category": "android",
+    "links": {
+      "view": "#",
+      "code": "https://github.com/JenisDusara/ChatBot"
+    }
+  }
+  
+]
