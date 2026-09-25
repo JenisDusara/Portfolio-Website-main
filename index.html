@@ -1,571 +1,367 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="jenis Dusara, portfolio, jenis, Data-Science" />
-    <meta name="description" content="Welcome to Jenis's Portfolio. Data Science" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Favicon -->
-    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
-    <title>Portfolio | Jenis Dusara</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenis Dusara | AI/ML Engineer</title>
+  <meta name="description" content="Jenis Dusara — AI/ML Engineer building RAG pipelines, document intelligence systems and full-stack web apps." />
+  <meta name="theme-color" content="#121212" />
+  <link rel="icon" href="./assets/images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+
+  <script>
+    // apply saved theme before paint to avoid a flash
+    try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
-<body oncontextmenu="return false">
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <canvas id="field" aria-hidden="true"></canvas>
 
-<!-- pre loader -->
-<!-- <div class="loader-container">
-  <img draggable="false" src="./assets/images/preloader.gif" alt="">
-</div> -->
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <a href="#home" class="monogram" aria-label="Jenis Dusara — home">JD</a>
 
-<!-- navbar starts -->
-<header>
-        <a href="/" class="logo"><i class="fab fa-node-js"></i> Jenis</a>
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="./index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
-
-
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
-
-    <div class="content">
-    <h2>Hi There,<br/> I'm Jenis <span>Dusara</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/jenis-dusara-44b559224/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href="https://github.com/JenisDusara" target="_blank"><i class="fab fa-github"></i></a></li>
-          <li><a class="twitter" aria-label="Twitter" href="https://twitter.com/DusaraJenis17" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/_jenish17_"><i class="fab fa-instagram" target="_blank"></i></a></li>
-        </ul>
-      </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="icon-btn menu-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="./assets/images/hero.png" alt="">
-</div>
-</section>
-<!-- hero section ends -->
+  </header>
 
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <p class="status"><span class="dot"></span>AI/ML Engineer Intern at VaultIQ</p>
+        <p class="hello">Hi! I'm <strong>Jenis Dusara</strong></p>
+        <h1 class="role-box"><span id="role">AI/ML Engineer</span></h1>
+        <p class="hero-desc">
+          Building intelligent systems with RAG &amp; LLMs, and full-stack products for real clients.<br />
+          Passionate about turning messy documents into reliable AI answers.
+        </p>
 
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
-
-    <div class="image">
-        <img draggable="false" class="tilt" src="50 kb my pic.jpg" alt="">
-    </div>
-    <div class="content">
-        <h3>I'm Jenis</h3>
-        <span class="tag">Data-Scinece</span>
-        
-        <p>I am an exceptionally motivated and result-oriented individual with a profound passion for technology. My journey in the realm of technology has equipped me with a diverse and robust skill set, encompassing a wide array of proficiencies. I possess a mastery of web development languages such as HTML and CSS, enabling me to craft visually appealing and functional websites. Moreover, my expertise extends to Python, a versatile and powerful programming language that I utilize to build innovative solutions and applications.
-
-
-          In the realm of artificial intelligence and data science, my knowledge and proficiency in machine learning are significant assets. I have honed my abilities to leverage machine learning algorithms and techniques to derive insights, make predictions, and drive informed decisions. This includes expertise in data preprocessing, model selection, and evaluation, as well as a strong understanding of neural networks and deep learning. </p>
-        
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> jenisdusara78@gmail.com</p>
-              <p><span> place : </span> Ahemdabad, India - 382350</p>
-            </div>
-        </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/15pw1_CBry5Ykmcz86AeGNlsReszobyGQ/view?usp=drive_link" target="_blank" class="btn"><span>Resume</span>
-
-
-                <i class="fas fa-chevron-right"></i>
-            </a>
+        <div class="socials">
+          <a href="https://github.com/JenisDusara" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jenis-dusara-44b559224/" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="mailto:jenishdusara78@gmail.com" class="icon-btn" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
         </div>
 
-    </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-<!-- skills section starts -->
-<section class="skills" id="skills">
-
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-          <div class="row"> 
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"/>
-                <span>HTML5</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000"/>
-                <span>CSS3</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=9nLaR5KFGjN0&format=png&color=0000000"/>
-                <span>MySQL</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=33039&format=png&color=000000"/>
-                <span>AWS</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=qYfwpsRXEcpc&format=png&color=000000"/>
-                <span>PwerBi</span>
-              </div>
-            </div>
-
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=Rc0Xn5AtE8kX&format=png&color=000000"/>                
-                <span>Python</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=NL90I8YT1YnN&format=png&color=000000"/>
-                <span>Machine Learning</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=oOOSYZyuA844&format=png&color=000000"/>
-                <span>Deep Learning</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=nhndz8YLqqT2&format=png&color=000000"/>
-                <span>Data Science</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=xaquNfre75yC&format=png&color=000000"/>
-                <span>Artificial intelligence</span>
-              </div>
-            </div>
-            <div class="bar">
-              <div class="info">
-                <img src="https://img.icons8.com/?size=100&id=XP4XPvHME2NH&format=png&color=000000"/>
-                <span>Data visualization</span>
-              </div>
-            </div>
-           
-
-      </div>
-</div>
-</section>
-<!-- skills section ends -->
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Education is not the learning of facts, but the training of the mind to think.</p>
-
-    <div class="box-container">
-
-      <div class="box">
-        <div class="image">
-        <img draggable="false" src="gls.jpg" alt="">
-        </div>
-        <div class="content">
-        <h3>Master of Computer Applications</h3>
-        <p>GLS University</p>
-        <h4>2024-2026 | Continue</h4>
-        </div>
-    </div>
-
-
-    <div class="box">
-        <div class="image">
-        <img draggable="false" src="Swarrnim.jpeg" alt="">
-        </div>
-        <div class="content">
-        <h3>Bachelor of Computer Applications</h3>
-        <p>Swarrnim Startup & Innovation University | SSCIT</p>
-        <h4>2020-2024 | complete</h4>
-        </div>
-    </div>
-
-    <div class="box">
-      <div class="image">
-      <img draggable="false" src="sun.jpeg" alt="">
-      </div>
-      <div class="content">
-      <h3>HSC Commerce</h3>
-      <p>Sunrise School  | GSEB</p>
-      <h4>2018-2020 | Completed</h4>
-      </div>
-    </div>
-
-</div>
-</section>
-<!-- education section ends -->
-
-
-<!-- work project section startscdcd  --> 
-<section class="work" >
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <div class="box tilt">
-      <img draggable="false" src="assets/images/projects/26.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>"Airlines Analytics"</h3>
-        </div>
-        <div class="desc">
-          <p>"The Airlines Data Analysis project involves extracting insights and valuable information from airline-related datasets using SQL and Python."</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/JenisDusara/Airline-project" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-ghost">Contact Me <i class="fa-regular fa-envelope"></i></a>
+          <a href="https://drive.google.com/file/d/1UxjDCiHsC-GdXXGcLtEizP6OxZqHUeJn/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">Resume <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
       </div>
-      <!-- <section class="work" id="work">
-        <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-        <div class="box-container">
-          <div class="box tilt">
-            <img draggable="false" src="assets/images/projects/26.png" alt="Airlines Analytics Project Image" />
-            <div class="content">
-              <div class="tag">
-                <h3>Airlines Analytics</h3>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about"><i class="fa-solid fa-chevron-down"></i></a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">About</span>
+          <h2>About me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <div class="card pipeline" id="pipeline">
+              <p class="mono code-line"><span class="accent">&gt;</span> answer = parse(docs) &gt;&gt; chunk() &gt;&gt; embed() &gt;&gt; retrieve(q) &gt;&gt; generate()</p>
+              <div class="stages">
+                <div class="stage"><div class="node"><i class="fa-regular fa-file-pdf"></i></div><span>Parse</span></div>
+                <div class="stage"><div class="node"><i class="fa-solid fa-scissors"></i></div><span>Chunk</span></div>
+                <div class="stage"><div class="node"><i class="fa-solid fa-diagram-project"></i></div><span>Embed</span></div>
+                <div class="stage"><div class="node"><i class="fa-solid fa-magnifying-glass"></i></div><span>Retrieve</span></div>
+                <div class="stage"><div class="node"><i class="fa-solid fa-wand-magic-sparkles"></i></div><span>Generate</span></div>
               </div>
-              <div class="desc">
-                <p>The Airlines Data Analysis project involves extracting insights and valuable information from airline-related datasets using SQL and Python.</p>
-                <div class="btns">
-                  <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-                  <a href="https://github.com/JenisDusara/Airline-project" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-                </div>
+              <div class="bar"><span id="pipe-bar"></span></div>
+              <p class="mono log" id="pipe-log"><span class="accent">&gt;</span> parsing documents...</p>
+              <div class="pipeline-status mono" id="pipe-status">
+                <div><span>pipeline.parse(pdf, docx, pptx)</span><em>active</em></div>
+                <div><span>pipeline.chunk()</span><em>waiting...</em></div>
+                <div><span>pipeline.embed(model)</span><em>waiting...</em></div>
+                <div><span>pipeline.retrieve(query)</span><em>waiting...</em></div>
+                <div><span>pipeline.generate(context)</span><em>waiting...</em></div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-       -->
 
-      .
+          <div class="about-text reveal">
+            <p class="lead">
+              I'm an AI/ML engineer focused on building practical LLM applications and document
+              intelligence. My work sits at the intersection of retrieval-augmented generation,
+              full-stack development and backend systems.
+            </p>
+            <p>
+              I care about AI that holds up in production — accurate, grounded answers over flashy demos.
+            </p>
+          </div>
+        </div>
+
+        <div class="services">
+          <div class="service card reveal">
+            <i class="fa-solid fa-brain"></i>
+            <h3>LLM &amp; RAG Systems</h3>
+            <p>RAG pipelines, embeddings, vector databases, evaluation</p>
+          </div>
+          <div class="service card reveal">
+            <i class="fa-solid fa-code"></i>
+            <h3>Full-Stack Development</h3>
+            <p>Next.js, React, ERP &amp; billing systems, client websites</p>
+          </div>
+          <div class="service card reveal">
+            <i class="fa-solid fa-server"></i>
+            <h3>Backend &amp; APIs</h3>
+            <p>FastAPI, Flask, REST APIs, SQL and NoSQL databases</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Skills</span>
+          <h2>What I Know</h2>
+        </div>
+
+        <div class="terminal card reveal">
+          <div class="terminal-bar">
+            <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+            <span class="mono">jenis@portfolio — ~/skills</span>
+          </div>
+          <div class="terminal-body mono">
+            <p class="cmd"><span class="accent">$</span> skills --domain <span class="domain" id="term-domain">ai/ml</span></p>
+            <p class="meta" id="term-meta">&gt; 0 matches</p>
+            <ul class="term-list" id="term-list"></ul>
+            <p class="cmd"><span class="accent">&gt;</span> <span class="term-cursor"></span></p>
+            <div class="term-tabs" id="term-tabs" role="tablist"></div>
+          </div>
+        </div>
+        <p class="hint center">// click a domain to run the query — or watch it cycle through.</p>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">My Journey</span>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="tl-item reveal">
+            <div class="tl-left"><h3>VaultIQ</h3></div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h4>AI/ML Engineer Intern</h4>
+              <p class="tl-meta"><strong>Dec 2024 — Present</strong> · Vadodara, India</p>
+              <ul>
+                <li>Engineered an end-to-end Retrieval-Augmented Generation (RAG) pipeline for enterprise document intelligence, enabling accurate, context-aware question answering across large PDF and Office document repositories.</li>
+                <li>Developed and optimized document ingestion — parsing, chunking, embedding generation and vector storage — to improve retrieval relevance and response quality.</li>
+                <li>Built automated evaluation and benchmarking frameworks for RAG systems, designing structured question–answer datasets and comparing retrieval performance across model and configuration variants.</li>
+                <li>Implemented backend services and feature modules in Python (FastAPI) supporting multi-tenant document processing, query routing and integration with messaging platforms.</li>
+                <li>Conducted end-to-end QA across OCR, file identity, chunking and embeddings for PDF, DOCX, PPTX and images, and collaborated with senior engineers on code reviews and production debugging.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-left"><h3>Ubrain Studio</h3></div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h4>Python Developer</h4>
+              <p class="tl-meta"><strong>Aug 2023 — Oct 2023</strong> · Remote</p>
+              <ul>
+                <li>Completed a 3-month software development internship, delivering three Python-based application projects integrated with MySQL — data processing, backend logic and CRUD-driven workflows.</li>
+                <li>Designed relational database schemas, optimized SQL queries and built reusable Python modules to streamline development.</li>
+                <li>Worked with team members and mentors to gather requirements, debug issues and deliver functional solutions within deadlines.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Learning</span>
+          <h2>Education</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="tl-item reveal">
+            <div class="tl-left"><h3>GLS University</h3></div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h4>Master of Computer Applications (MCA)</h4>
+              <p class="tl-meta"><strong>2024 — 2026</strong> · Ahmedabad, Gujarat · Completed</p>
+              <ul>
+                <li>Faculty of Computer Applications &amp; IT (FCAIT)</li>
+                <li>Coursework: Machine Learning, Artificial Intelligence, Data Structures &amp; Algorithms, DBMS, Python Programming, Software Engineering</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tl-item reveal">
+            <div class="tl-left"><h3>Swarrnim Startup &amp; Innovation University</h3></div>
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <h4>Bachelor of Computer Applications (BCA)</h4>
+              <p class="tl-meta"><strong>2021 — 2024</strong> · Gujarat, India · Completed</p>
+              <ul>
+                <li>Coursework: Programming Fundamentals, Object-Oriented Programming, Web Development, DBMS, Operating Systems</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Selected Work</span>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="projects">
+          <article class="project mini card reveal">
+            <div class="mini-top">
+              <p class="project-kind"><span class="live-dot"></span>Live · SaaS</p>
+              <a href="https://laundrymax.in/" target="_blank" rel="noopener" class="mini-arrow" aria-label="Visit LaundryMax"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3>LaundryMax</h3>
+            <p>Multi-tenant SaaS used by multiple laundry &amp; dry-cleaning businesses — each shop gets its own billing, orders, pickup &amp; delivery, labour, accounts and WhatsApp bills.</p>
+            <div class="tags"><span>Next.js</span><span>Multi-tenant</span><span>SaaS</span><span>WhatsApp</span></div>
+            <a class="project-url" href="https://laundrymax.in/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> laundrymax.in</a>
+          </article>
+          <article class="project mini card reveal">
+            <div class="mini-top">
+              <p class="project-kind"><span class="live-dot private"></span>Client · ERP</p>
+              <span class="mini-arrow" aria-hidden="true"><i class="fa-solid fa-lock"></i></span>
+            </div>
+            <h3>Denzo Salon ERP</h3>
+            <p>A complete ERP for a salon business — billing &amp; invoicing, appointment scheduling, customer management and day-to-day operations in one system.</p>
+            <div class="tags"><span>ERP</span><span>Billing</span><span>Appointments</span><span>CRM</span></div>
+            <p class="project-note"><i class="fa-solid fa-lock"></i> Private client system</p>
+          </article>
+          <article class="project mini card reveal">
+            <div class="mini-top">
+              <p class="project-kind"><span class="live-dot"></span>Live · Client</p>
+              <a href="https://www.radhehampers.com/" target="_blank" rel="noopener" class="mini-arrow" aria-label="Visit Radhe Hampers"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3>Radhe Hampers</h3>
+            <p>Gifting website for an Ahmedabad hamper brand — festive, wedding and corporate hampers, custom branded boxes, with WhatsApp and bulk-enquiry flows.</p>
+            <div class="tags"><span>Website</span><span>Catalogue</span><span>Enquiry</span><span>WhatsApp</span></div>
+            <a class="project-url" href="https://www.radhehampers.com/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> radhehampers.com</a>
+          </article>
+          <article class="project mini card reveal">
+            <div class="mini-top">
+              <p class="project-kind"><span class="live-dot"></span>Live · Client</p>
+              <a href="https://www.shivay-physiotherapy.com/" target="_blank" rel="noopener" class="mini-arrow" aria-label="Visit Shivay Physiotherapy"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3>Shivay Physiotherapy</h3>
+            <p>Website for a physiotherapy &amp; rehabilitation clinic in Ahmedabad — services, doctors, testimonials, WhatsApp and appointment booking.</p>
+            <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span></div>
+            <a class="project-url" href="https://www.shivay-physiotherapy.com/" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> shivay-physiotherapy.com</a>
+          </article>
+        </div>
+
+        <div class="center more">
+          <a href="https://github.com/JenisDusara?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> More on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Highlights</span>
+          <h2>Achievements</h2>
+        </div>
+
+        <div class="ach-grid">
+          <div class="ach card reveal highlight">
+            <i class="fa-solid fa-trophy"></i>
+            <h3>1st Prize — Cyber Shadez 2025</h3>
+            <p>Won first place with an IoT project at the event organized by GLS University.</p>
+          </div>
+          <div class="ach card reveal">
+            <i class="fa-solid fa-flag"></i>
+            <h3>Smart India Hackathon 2024</h3>
+            <p>Contributor at the Government of India's national-level innovation challenge.</p>
+          </div>
+          <div class="ach card reveal">
+            <i class="fa-solid fa-satellite"></i>
+            <h3>ISRO &amp; Odoo Hackathons 2025</h3>
+            <p>Participant, and an active contributor across multiple Google developer competitions.</p>
+          </div>
+          <div class="ach card reveal">
+            <i class="fa-solid fa-users"></i>
+            <h3>Coordinator &amp; Volunteer</h3>
+            <p>Coordinator — Orientation Program 2023, Swarrnim University; participant — Vocal for Local (2021).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Let's Talk</span>
+          <h2>Get in touch</h2>
+        </div>
+
+        <div class="contact card reveal">
+          <p>Open to AI/ML roles, RAG and LLM projects, or a friendly chat about tech. Drop a message — I'll get back to you soon.</p>
+          <a href="mailto:jenishdusara78@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> jenishdusara78@gmail.com <i class="fa-solid fa-arrow-right"></i></a>
+          <p class="phone"><i class="fa-solid fa-phone"></i> <a href="tel:+919824436736">+91 98244 36736</a></p>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/jenis-dusara-44b559224/" target="_blank" rel="noopener" class="icon-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/JenisDusara" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <button type="button" class="icon-btn" id="copy-email" aria-label="Copy email address" title="Copy email"><i class="fa-regular fa-copy"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Jenis Dusara © <span id="year"></span>. All rights reserved.</p>
+      <p>Designed &amp; built with <i class="fa-solid fa-heart heart"></i></p>
     </div>
-  
-    <div class="box tilt">
-      <img draggable="false" src="assets/images/projects/277.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>"Hotel Management System"</h3>
-        </div>
-        <div class="desc">
-          <p>"A hotel management project is a comprehensive initiative in the hospitality industry that focuses on creating and implementing an efficient system to oversee all aspects of hotel operations.."</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/JenisDusara/hotel-management" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
+  </footer>
 
-      
-    </div>
+  <button class="to-top icon-btn" id="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <div class="box tilt">
-      <img draggable="false" src="assets/images/projects/25.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>"Student Management System"</h3>
-        </div>
-        <div class="desc">
-          <p>"A Student data management project focuses on developing a system to collect, store, and manage student data efficiently in educational institutions."</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/JenisDusara/hotel-management" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-
-    <div class="box tilt">
-      <img draggable="false" src="assets/images/projects/tomato.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>"Tomato leaf diseases"</h3>
-        </div>
-        <div class="desc">
-          <p>"This project tackles tomato leaf diseases! We're building a tool to identify problems early. By taking a picture, the system analyzes the leaf for signs of disease."</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/JenisDusara/TOMATO---LEAF-DISEASE" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-    <div class="box tilt">
-      <img draggable="false" src="assets/images/projects/chatbot.png" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>"Chatbot"</h3>
-        </div>
-        <div class="desc">
-          <p>"Chatbot project: create a program for chatting like a virtual assistant. It can answer questions, complete tasks, or guide users.  Think of it as a conversational website or app!"</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="https://github.com/JenisDusara/ChatBot" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-
-      
-    </div>
-
-</div>
-
-
-<!-- <div class="viewall">
-  <a href="./projects/index.html" class="btn"><span>View All</span>
-    <i class="fas fa-arrow-right"></i>
-</a>
-</div> -->
-
-</section>
-<!-- work project section ends -->
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-
-  <div class="timeline">
-
-    
-    
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Ubrain Studio</h2>
-        </div>
-        <div class="desc">
-            <h3>Python Internship</h3>
-            <p>2 month</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-        <div class="content">
-          <div class="tag">
-            <h2>CodeAlpha</h2>
-          </div>
-          <div class="desc">
-              <h3>Python internship</h3>
-              <p>1 month </p>
-          </div>
-        </div>
-      </div>
-
-  </div>
-
-  <!-- <div class="morebtn">
-    <a href="/experience" class="btn"><span>View All</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div> -->
-
-</div>
-
-</section>
-<!-- experience section ends -->
-
-<!-- contact section starts -->
-<!-- <section class="contact" id="contact">
-  
-  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-  <div class="container">
-    <div class="content">
-      <div class="image-box">
-        <img draggable="false" src="./assets/images/contact1.png" alt="">
-      </div>
-    <form id="contact-form">
-      
-      <div class="form-group">
-        <div class="field">
-          <input type="text" name="name" placeholder="Name" required>
-          <i class='fas fa-user'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
-          <i class='fas fa-envelope'></i>
-        </div>
-        <div class="field">
-          <input type="text" name="phone" placeholder="Phone">
-          <i class='fas fa-phone-alt'></i>
-        </div>
-        <div class="message">
-        <textarea placeholder="Message" name="message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
-        </div>
-        </div>
-      <div class="button-area">
-        <button type="submit">
-          Submit <i class="fa fa-paper-plane"></i></button>
-      </div>
-    </form>
-  </div>
-  </div>
-</section> -->
-<!-- contact section ends --> 
-
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Jenis's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <script>
-        const scriptURL = 'https://docs.google.com/spreadsheets/d/1ENf1j0p-COuYdHIejnI4J1zCe_9xD6yTcFZFfrhikok/edit#gid=0'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-    
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML ="Message Sent Successfully"
-                setTimeout(function(){
-                    msg.innerHTML =""
-                },5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
-    
-    <script>
-    
-        var sidemenu = document.getElementById("sidemenu");
-    
-        function openmenu(){
-            sidemenu.style.right = "0";                 
-        }
-        function closemenu(){
-            sidemenu.style.right = "-200px";
-                     
-        }
-    
-    
-    </script>
-    
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 9824436736</p>
-          <p> <i class="fas fa-envelope"></i>jenishdusara78@.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Ahemdabad, India-382350</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/jenis-dusara-44b559224/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/JenisDusara" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:jenishdusara78@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://twitter.com/DusaraJenis" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
-              <!-- <a href="https://t.me/lifecode5" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a> -->
-          </div>
-      </div>
-  </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/jenis-dusara-44b559224/"> Jenis Dusara</a></h1>
-
-</section>
-<!-- footer section ends -->
-
-
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
-
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./assets/js/script.js"></script>
-
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
-
-
